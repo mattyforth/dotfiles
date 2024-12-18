@@ -1,0 +1,31 @@
+let mapleader=" "
+
+" Basic options
+set nocompatible
+
+syntax on
+
+filetype on
+
+filetype indent on
+
+set number
+set cursorline
+set relativenumber
+
+set expandtab
+set nobackup
+set scrolloff=10
+set nowrap
+set ignorecase
+set smartcase
+set showcmd
+set showmatch
+set hlsearch
+set incsearch
+
+set shiftwidth=4
+set tabstop=4
+
+" Mappings
+noremap <Esc><Esc> :noh<Cr>

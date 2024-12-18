@@ -1,0 +1,16 @@
+.DS_Store
+
+configstore/
+filezilla/
+herd-lite/
+jgit/
+op/
+phpmon/
+psysh/
+raycast/
+iterm2/
+
+karabiner/automatic_backups/*
+
+valet/*
+!valet/config.json
