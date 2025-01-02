@@ -7,15 +7,15 @@ hyper - g : open /Applications/Fork.app
 hyper - d : open /Applications/Sequel Ace.app
 
 # Window management
-alt - h : open -g "rectangle://execute-action?name=left-half"
-alt - j : open -g "rectangle://execute-action?name=bottom-half"
-alt - k : open -g "rectangle://execute-action?name=top-half"
-alt - l : open -g "rectangle://execute-action?name=right-half"
+meh - h : open -g "rectangle://execute-action?name=left-half"
+meh - j : open -g "rectangle://execute-action?name=bottom-half"
+meh - k : open -g "rectangle://execute-action?name=top-half"
+meh - l : open -g "rectangle://execute-action?name=right-half"
 
-alt - u : open -g "rectangle://execute-action?name=top-left"
-alt - i : open -g "rectangle://execute-action?name=top-right"
-alt - m : open -g "rectangle://execute-action?name=bottom-left"
-alt - 0x2B : open -g "rectangle://execute-action?name=bottom-right"
+meh - u : open -g "rectangle://execute-action?name=top-left"
+meh - i : open -g "rectangle://execute-action?name=top-right"
+meh - m : open -g "rectangle://execute-action?name=bottom-left"
+meh - 0x2B : open -g "rectangle://execute-action?name=bottom-right"
 
-alt - c : open -g "rectangle://execute-action?name=center"
-alt - space : open -g "rectangle://execute-action?name=maximize"
+meh - c : open -g "rectangle://execute-action?name=center"
+meh - space : open -g "rectangle://execute-action?name=maximize"
