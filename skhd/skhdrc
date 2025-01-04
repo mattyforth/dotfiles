@@ -1,21 +1,21 @@
 # Application switching
-hyper - b : open /Applications/Firefox.app
-hyper - n : open /Applications/Obsidian.app
-hyper - c : open /Applications/PhpStorm.app
-hyper - t : open /Applications/iTerm.app
-hyper - g : open /Applications/Fork.app
-hyper - d : open /Applications/Sequel Ace.app
+meh - b : open /Applications/Firefox.app
+meh - n : open /Applications/Obsidian.app
+meh - c : open /Applications/PhpStorm.app
+meh - t : open /Applications/iTerm.app
+meh - g : open /Applications/Fork.app
+meh - d : open /Applications/Sequel Ace.app
 
 # Window management
-meh - h : open -g "rectangle://execute-action?name=left-half"
-meh - j : open -g "rectangle://execute-action?name=bottom-half"
-meh - k : open -g "rectangle://execute-action?name=top-half"
-meh - l : open -g "rectangle://execute-action?name=right-half"
+hyper - h : open -g "rectangle://execute-action?name=left-half"
+hyper - j : open -g "rectangle://execute-action?name=bottom-half"
+hyper - k : open -g "rectangle://execute-action?name=top-half"
+hyper - l : open -g "rectangle://execute-action?name=right-half"
 
-meh - u : open -g "rectangle://execute-action?name=top-left"
-meh - i : open -g "rectangle://execute-action?name=top-right"
-meh - m : open -g "rectangle://execute-action?name=bottom-left"
-meh - 0x2B : open -g "rectangle://execute-action?name=bottom-right"
+hyper - u : open -g "rectangle://execute-action?name=top-left"
+hyper - i : open -g "rectangle://execute-action?name=top-right"
+hyper - m : open -g "rectangle://execute-action?name=bottom-left"
+hyper - 0x2B : open -g "rectangle://execute-action?name=bottom-right"
 
-meh - c : open -g "rectangle://execute-action?name=center"
-meh - space : open -g "rectangle://execute-action?name=maximize"
+hyper - c : open -g "rectangle://execute-action?name=center"
+hyper - space : open -g "rectangle://execute-action?name=maximize"
