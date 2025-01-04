@@ -27,4 +27,9 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-window -d -t=$selected_name -c $selected
 fi
 
+# Attach tmux if it is not already attached
+if [[ -z $TMUX ]]; then
+	tmux attach
+fi
+
 tmux switch-client -t $selected_name
