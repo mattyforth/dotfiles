@@ -7,6 +7,8 @@ meh - g : open /Applications/Fork.app
 meh - d : open "/Applications/Sequel Ace.app"
 meh - m : open /Applications/Mattermost.app
 meh - z : open /Applications/zoom.us.app
+meh - i : open /System/Applications/Messages.app
+meh - f : open /System/Library/CoreServices/Finder.app
 
 # Window management
 hyper - h : open -g "rectangle://execute-action?name=left-half"
