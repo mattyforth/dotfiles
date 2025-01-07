@@ -1,0 +1,12 @@
+return {
+  'ricardoramirezr/blade-nav.nvim',
+  requires = {
+    'hrsh7th/nvim-cmp', -- if using nvim-cmp
+  },
+  ft = { 'blade', 'php' },
+  config = function()
+    require('blade-nav').setup {
+      cmp_close_tag = true, -- default: true
+    }
+  end,
+}

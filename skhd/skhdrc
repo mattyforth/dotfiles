@@ -4,7 +4,8 @@ meh - n : open /Applications/Obsidian.app
 meh - c : open /Applications/PhpStorm.app
 meh - t : open /Applications/iTerm.app
 meh - g : open /Applications/Fork.app
-meh - d : open /Applications/Sequel Ace.app
+meh - d : open "/Applications/Sequel Ace.app"
+meh - m : open /Applications/Mattermost.app
 
 # Window management
 hyper - h : open -g "rectangle://execute-action?name=left-half"

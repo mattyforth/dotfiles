@@ -14,16 +14,16 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Test keymaps
 vim.keymap.set('n', '<leader>tn', function()
   require('neotest').run.run()
-end)
-vim.keymap.set('n', '<leader>tf', function()
+end, { desc = '[T]est [N]earest' })
+vim.keymap.set('n', '<leader>tt', function()
   require('neotest').run.run(vim.fn.expand '%')
-end)
+end, { desc = 'Test whole file' })
 vim.keymap.set('n', '<leader>to', function()
   require('neotest').output.open()
-end)
+end, { desc = '[T]est [Overview]' })
 vim.keymap.set('n', '<leader>ta', function()
   require('neotest').run.run { suite = true }
-end)
+end, { desc = 'Run all tests' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
