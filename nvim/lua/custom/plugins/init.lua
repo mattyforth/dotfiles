@@ -95,7 +95,8 @@ return {
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>h', group = '[H]arpoon', mode = { 'n', 'v' } },
+        { '<leader>g', group = '[G]it'}
       },
     },
   },
@@ -654,8 +655,8 @@ return {
     name = 'catpuccin',
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme "catppuccin"
-    end
+      vim.cmd.colorscheme 'catppuccin'
+    end,
   },
 
   -- Highlight todo, notes, etc in comments
@@ -756,5 +757,5 @@ return {
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  
 }
