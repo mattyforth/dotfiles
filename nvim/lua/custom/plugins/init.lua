@@ -96,7 +96,7 @@ return {
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = '[H]arpoon', mode = { 'n', 'v' } },
-        { '<leader>g', group = '[G]it'}
+        { '<leader>g', group = '[G]it' },
       },
     },
   },
@@ -163,7 +163,13 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        -- pickers = {
+        --   buffers = {
+        --     sorter = function ()
+        --
+        --     end
+        --   }
+        -- }
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -752,10 +758,9 @@ return {
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
-  
 }
