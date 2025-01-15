@@ -2,3 +2,4 @@ source ~/.config/vim/vimrc
 
 " IDEA specific mappings
 map <leader>sf <Action>(GotoFile)
+map <leader>bt <Action>(ToggleBreakpoint)
