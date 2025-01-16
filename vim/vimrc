@@ -12,6 +12,7 @@ filetype indent on
 set number
 set cursorline
 set relativenumber
+set autoindent
 
 set expandtab
 set nobackup
