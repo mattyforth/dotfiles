@@ -12,18 +12,23 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Test keymaps
-vim.keymap.set('n', '<leader>tn', function()
-  require('neotest').run.run()
-end, { desc = '[T]est [N]earest' })
-vim.keymap.set('n', '<leader>tt', function()
-  require('neotest').run.run(vim.fn.expand '%')
-end, { desc = 'Test whole file' })
-vim.keymap.set('n', '<leader>to', function()
-  require('neotest').output.open()
-end, { desc = '[T]est [Overview]' })
-vim.keymap.set('n', '<leader>ta', function()
-  require('neotest').run.run { suite = true }
-end, { desc = 'Run all tests' })
+-- TODO: Add keymaps to open the last test run, if we are not in a test file
+-- add keymap to run the last run test
+-- add telescope test finder to allow us to run any test from anywhere
+-- fix 'no test output file' when running all tests
+
+-- vim.keymap.set('n', '<leader>tn', function()
+--   require('neotest').run.run()
+-- end, { desc = '[T]est [N]earest' })
+-- vim.keymap.set('n', '<leader>tt', function()
+--   require('neotest').run.run(vim.fn.expand '%')
+-- end, { desc = 'Test whole file' })
+-- vim.keymap.set('n', '<leader>to', function()
+--   require('neotest').output.open()
+-- end, { desc = '[T]est [Overview]' })
+-- vim.keymap.set('n', '<leader>ta', function()
+--   require('neotest').run.run { suite = true }
+-- end, { desc = 'Run all tests' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -43,10 +48,10 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
--- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
--- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
--- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
--- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Disable the command line thing that I always seem to open when typing :q the wrong way round
 vim.keymap.set('n', 'q:', ':q<CR>')
