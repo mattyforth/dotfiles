@@ -21,7 +21,7 @@ vim.opt.wrap = false
 vim.opt.hlsearch = true
 vim.opt.showmatch = true
 vim.opt.incsearch = true
-
+vim.opt.autoread = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 
