@@ -3,6 +3,11 @@
    (#set! injection.combined)
    (#set! injection.language php))
 
+; tree-sitter-comment injection
+; if available
+((comment) @injection.content
+ (#set! injection.language "comment"))
+
 ((text) @injection.content
    (#has-ancestor? @injection.content "envoy")
    (#set! injection.combined)
