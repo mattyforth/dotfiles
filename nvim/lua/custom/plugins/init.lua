@@ -525,7 +525,7 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
 
-        php = { { 'pint', 'php_cs_fixer' } },
+        php = { 'pint' },
 
         blade = { 'blade-formatter' },
 
