@@ -25,3 +25,5 @@ alt - 0x2B : open -g "rectangle://execute-action?name=bottom-right"
 alt - c : open -g "rectangle://execute-action?name=center"
 alt - space : open -g "rectangle://execute-action?name=maximize"
 
+alt + shift - h : open -g "rectangle://execute-action?name=previous-display"
+alt + shift - l : open -g "rectangle://execute-action?name=next-display"
