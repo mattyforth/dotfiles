@@ -1,5 +1,40 @@
 source ~/.config/vim/vimrc
 
-" IDEA specific mappings
-map <leader>sf <Action>(GotoFile)
-map <leader>bt <Action>(ToggleBreakpoint)
+-- Plugins
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+
+nmap <leader>r :source ~/.config/ideavim/ideavimrc<CR>
+
+-- File navigation mappings
+nmap <leader>sf <Action>(GotoFile)
+nmap <leader>ss <Action>(GoToSymbols)
+nmap <leader>sa <Action>(GotoAction)
+nmap <leader>space <Action>(RecentFiles)
+nmap <leader>sg <Action>(FindInPath)
+
+nmap <leader>ha <Action>(ToggleBookmark)
+nmap <leader>hs <Action>(ShowBookmarks)
+
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gr <Action>(FindUsages)
+
+nmap <leader>ds <Action>(FileStructurePopup)
+
+nmap <leader>\ :NERDTreeToggle<cr>
+
+nmap <C-i> <Action>(Forward)
+
+-- Tests
+nmap <leader>tn <Action>(RunClass)
+
+-- Code actions
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>cv <Action>(IntroduceVariable)
+
+-- Command actions
+nmap <leader>li <Action>(com.laravel_idea.plugin.LaravelActionChooser)
+
