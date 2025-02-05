@@ -2,7 +2,7 @@
 hyper - b : open /Applications/Firefox.app
 hyper - n : open /Applications/Obsidian.app
 hyper - c : open ~/Applications/PhpStorm.app
-hyper - t : open /Applications/iTerm.app
+hyper - t : open /Applications/Ghostty.app
 hyper - g : open /Applications/Fork.app
 hyper - d : open "/Applications/Sequel Ace.app"
 hyper - m : open /Applications/Mattermost.app

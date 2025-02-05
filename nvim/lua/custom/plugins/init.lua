@@ -558,12 +558,14 @@ return {
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+
+              require('luasnip').filetype_extend('blade', { 'html' })
+            end,
+          },
         },
       },
       'saadparwaiz1/cmp_luasnip',
@@ -606,6 +608,7 @@ return {
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
           ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<Tab>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
@@ -677,6 +680,15 @@ return {
     name = 'catpuccin',
     priority = 1000,
     init = function()
+      require('catppuccin').setup {
+        flavor = 'frappe',
+
+        background = {
+          dark = 'frappe',
+          light = 'latte',
+        },
+      }
+
       vim.cmd.colorscheme 'catppuccin'
     end,
   },

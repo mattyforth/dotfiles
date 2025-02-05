@@ -2,7 +2,105 @@
     "profiles": [
         {
             "complex_modifications": {
+                "parameters": {
+                    "basic.to_if_alone_timeout_milliseconds": 200,
+                    "basic.to_if_held_down_threshold_milliseconds": 1000
+                },
                 "rules": [
+                    {
+                        "description": "Home row mods",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": { "key_code": "f" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": { "key_code": "d" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_alt",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": { "key_code": "s" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_control",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": { "key_code": "j" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_command",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": { "key_code": "k" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_alt",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": { "key_code": "l" },
+                                "type": "basic"
+                            }
+                        ],
+                        "parameters": {
+                            "to_if_alone_timeout_milliseconds": 1000,
+                            "to_if_held_down_threshold_milliseconds": 1000
+                        }
+                    },
                     {
                         "description": "Change right_command to HYPER",
                         "manipulators": [
@@ -23,6 +121,7 @@
                     },
                     {
                         "description": "Tab to MEH if held",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -41,13 +140,14 @@
                         ]
                     },
                     {
-                        "description": "Control + hjkl == vim directional Keys",
+                        "description": "MEH + hjkl == vim directional Keys",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": ["left_control"],
+                                        "mandatory": ["left_control", "left_shift", "left_alt"],
                                         "optional": []
                                     }
                                 },
@@ -58,7 +158,7 @@
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["left_control"],
+                                        "mandatory": ["left_control", "left_shift", "left_alt"],
                                         "optional": []
                                     }
                                 },
@@ -69,7 +169,7 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": ["left_control"],
+                                        "mandatory": ["left_control", "left_shift", "left_alt"],
                                         "optional": []
                                     }
                                 },
@@ -80,7 +180,7 @@
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": ["left_control"],
+                                        "mandatory": ["left_control", "left_shift", "left_alt"],
                                         "optional": []
                                     }
                                 },
@@ -90,7 +190,7 @@
                         ]
                     },
                     {
-                        "description": "CAPS_LOCK to control or ESCAPE (If Alone)",
+                        "description": "CAPS_LOCK to Control or ESCAPE (If Alone)",
                         "manipulators": [
                             {
                                 "from": {
