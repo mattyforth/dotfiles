@@ -12,11 +12,11 @@ return {
       adapters = {
         require 'neotest-pest' {
           ignore_dirs = { 'node_modules', 'vendor' },
+          compact = false,
         },
       },
       output = {
         enabled = true,
-        enter = false,
         open_on_run = 'long',
       },
     }
@@ -41,8 +41,16 @@ return {
     end, { desc = 'Test whole file' })
 
     vim.keymap.set('n', '<leader>to', function()
-      neotest.output.open()
+      neotest.output.open {}
     end, { desc = '[T]est [o]utput' })
+
+    vim.keymap.set('n', '<leader>tr', function()
+      neotest.run.run_last {}
+    end, { desc = '[T]est [r]erun' })
+
+    vim.keymap.set('n', '<leader>tl', function()
+      neotest.output.open { last_run = true }
+    end, { desc = '[T]est output [l]ast' })
 
     vim.keymap.set('n', '<leader>tO', function()
       neotest.output_panel.toggle()
