@@ -10,7 +10,7 @@ nmap <leader>r :source ~/.config/ideavim/ideavimrc<CR>
 nmap <leader>sf <Action>(GotoFile)
 nmap <leader>ss <Action>(GoToSymbols)
 nmap <leader>sa <Action>(GotoAction)
-nmap <leader>space <Action>(RecentFiles)
+nmap <leader><Space> <Action>(RecentFiles)
 nmap <leader>sg <Action>(FindInPath)
 
 nmap <leader>ha <Action>(ToggleBookmark)
@@ -23,7 +23,7 @@ nmap <leader>gr <Action>(FindUsages)
 
 nmap <leader>ds <Action>(FileStructurePopup)
 
-nmap <leader>\ :NERDTreeToggle<cr>
+nmap \ :NERDTreeToggle<cr>
 
 nmap <C-i> <Action>(Forward)
 
