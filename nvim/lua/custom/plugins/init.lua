@@ -791,4 +791,5 @@ return {
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
+  require 'custom.plugins.tmux-navigator',
 }

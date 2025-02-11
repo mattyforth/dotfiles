@@ -9,6 +9,8 @@ return {
     harpoon:setup()
     -- REQUIRED
 
+    -- TODO: Think of some better binds here, the default ones conflict with tmux navigator
+
     vim.keymap.set('n', '<leader>ha', function()
       harpoon:list():add()
     end)
@@ -16,16 +18,16 @@ return {
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    vim.keymap.set('n', '<c-h>', function()
+    vim.keymap.set('n', '<leader>hh', function()
       harpoon:list():select(1)
     end, { noremap = true })
-    vim.keymap.set('n', '<c-j>', function()
+    vim.keymap.set('n', '<leader>hj', function()
       harpoon:list():select(2)
     end)
-    vim.keymap.set('n', '<c-k>', function()
+    vim.keymap.set('n', '<leader>hk', function()
       harpoon:list():select(3)
     end)
-    vim.keymap.set('n', '<c-l>', function()
+    vim.keymap.set('n', '<leader>hl', function()
       harpoon:list():select(4)
     end)
   end,
