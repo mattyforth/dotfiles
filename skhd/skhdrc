@@ -10,6 +10,7 @@ hyper - z : open /Applications/zoom.us.app
 hyper - i : open /System/Applications/Messages.app
 hyper - f : open /System/Library/CoreServices/Finder.app
 hyper - w : open /Applications/WhatsApp.app
+hyper - s : open /Applications/Spotify.app
 
 # Window management
 meh - h : open -g "rectangle://execute-action?name=left-half"
