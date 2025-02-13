@@ -65,11 +65,12 @@ alias vap="valet php ./artisan"
 alias flushdns="sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset"
 
 # Git
-alias gc="git commit -m \"$1\""
+alias gc="git commit -m $1"
 alias ga="git add"
 alias gs="git status"
 alias go="git checkout"
 alias gr="git restore --staged"
+alias gp="git push"
 
 #export PATH="/Users/mattyforth/.config/herd-lite/bin:$PATH"
 #export PHP_INI_SCAN_DIR="/Users/mattyforth/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
