@@ -13,18 +13,21 @@ hyper - w : open /Applications/WhatsApp.app
 hyper - s : open /Applications/Spotify.app
 
 # Window management
-meh - h : open -g "rectangle://execute-action?name=left-half"
-meh - j : open -g "rectangle://execute-action?name=bottom-half"
-meh - k : open -g "rectangle://execute-action?name=top-half"
-meh - l : open -g "rectangle://execute-action?name=right-half"
+alt - h : open -g "rectangle://execute-action?name=left-half"
+alt - j : open -g "rectangle://execute-action?name=bottom-half"
+alt - k : open -g "rectangle://execute-action?name=top-half"
+alt - l : open -g "rectangle://execute-action?name=right-half"
 
-meh - u : open -g "rectangle://execute-action?name=top-left"
-meh - i : open -g "rectangle://execute-action?name=top-right"
-meh - m : open -g "rectangle://execute-action?name=bottom-left"
-meh - 0x2B : open -g "rectangle://execute-action?name=bottom-right"
+alt - u : open -g "rectangle://execute-action?name=top-left"
+alt - i : open -g "rectangle://execute-action?name=top-right"
+alt - m : open -g "rectangle://execute-action?name=bottom-left"
+alt - 0x2B : open -g "rectangle://execute-action?name=bottom-right"
 
-meh - c : open -g "rectangle://execute-action?name=center"
-meh - space : open -g "rectangle://execute-action?name=maximize"
+alt - c : open -g "rectangle://execute-action?name=center"
+alt - space : open -g "rectangle://execute-action?name=maximize"
+alt - return : open -g "rectangle://execute-action?name=maximize"
 
-meh - y : open -g "rectangle://execute-action?name=previous-display"
-meh - o : open -g "rectangle://execute-action?name=next-display"
+alt - y : open -g "rectangle://execute-action?name=previous-display"
+alt - o : open -g "rectangle://execute-action?name=next-display"
+alt + shift - h : open -g "rectangle://execute-action?name=previous-display"
+alt + shift - l : open -g "rectangle://execute-action?name=next-display"
