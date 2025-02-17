@@ -376,7 +376,6 @@
                     },
                     {
                         "description": "MEH + hjkl == vim directional Keys",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
