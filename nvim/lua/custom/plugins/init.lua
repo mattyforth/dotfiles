@@ -422,6 +422,18 @@ return {
           },
         },
 
+        cssls = {
+          settings = {
+            css = {
+              lint = {
+                unknownAtRules = 'ignore',
+              },
+            },
+          },
+        },
+
+        -- cssmodules_ls = {},
+
         -- phpactor = {},
 
         intelephense = {},
@@ -681,10 +693,10 @@ return {
     priority = 1000,
     init = function()
       require('catppuccin').setup {
-        flavor = 'frappe',
+        flavour = 'auto',
 
         background = {
-          dark = 'frappe',
+          dark = 'mocha',
           light = 'latte',
         },
       }
