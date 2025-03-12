@@ -1,10 +1,10 @@
-;(directive) @function
-;(directive_start) @function
-;(directive_end) @function
+(directive) @function
+(directive_start) @function
+(directive_end) @function
 ; Changed the above to @tag instead, as per https://seankegel.com/neovim-for-php-and-laravel#heading-blade-highlights
-(directive) @tag
-(directive_start) @tag
-(directive_end) @tag
+;(directive) @tag
+;(directive_start) @tag
+;(directive_end) @tag
 
 (comment) @comment
 ((parameter) @include (#set! "priority" 110)) 

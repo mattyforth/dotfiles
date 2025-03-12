@@ -6,7 +6,7 @@ return {
   ft = { 'blade', 'php' },
   config = function()
     require('blade-nav').setup {
-      cmp_close_tag = true, -- default: true
+      cmp_close_tag = false, -- default: true
     }
   end,
 }
