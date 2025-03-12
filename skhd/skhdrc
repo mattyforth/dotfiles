@@ -12,6 +12,7 @@ hyper - f : open /System/Library/CoreServices/Finder.app
 hyper - w : open /Applications/WhatsApp.app
 hyper - s : open /Applications/Spotify.app
 hyper - l : open "/Applications/Logic Pro.app"
+hyper - e : open /System/Applications/Mail.app
 
 # Window management
 alt - h : open -g "rectangle://execute-action?name=left-half"
