@@ -1,6 +1,7 @@
 theme = dark:catppuccin-frappe,light:catppuccin-latte
 
 font-family = JetBrainsMono Nerd Font Mono
+font-thicken = true
 font-size = 16
 
 scrollback-limit = 10000
