@@ -13,6 +13,8 @@ hyper - w : open /Applications/WhatsApp.app
 hyper - s : open /Applications/Spotify.app
 hyper - l : open "/Applications/Logic Pro.app"
 hyper - e : open /System/Applications/Mail.app
+hyper - r : open /Applications/Figma.app # [R]eference
+
 
 # Window management
 alt - h : open -g "rectangle://execute-action?name=left-half"
