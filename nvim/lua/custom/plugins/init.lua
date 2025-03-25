@@ -434,9 +434,13 @@ return {
 
         -- cssmodules_ls = {},
 
-        -- phpactor = {},
+        phpactor = {
+          autostart = true,
+        },
 
-        intelephense = {},
+        intelephense = {
+          autostart = true,
+        },
 
         ts_ls = {
           init_options = {
@@ -491,6 +495,7 @@ return {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
+
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
