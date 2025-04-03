@@ -14,6 +14,7 @@ hyper - s : open /Applications/Spotify.app
 hyper - l : open "/Applications/Logic Pro.app"
 hyper - e : open /System/Applications/Mail.app
 hyper - r : open /Applications/Figma.app # [R]eference
+hyper - a : open /Applications/RapidAPI.app # [A]pi
 
 
 # Window management
