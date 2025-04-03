@@ -16,14 +16,17 @@ nmap <leader>sg <Action>(FindInPath)
 nmap <leader>ha <Action>(ToggleBookmark)
 nmap <leader>hs <Action>(ShowBookmarks)
 
-nmap <leader>gd <Action>(GotoDeclaration)
-nmap <leader>gt <Action>(GotoTest)
-nmap <leader>gu <Action>(ShowUsages)
-nmap <leader>gr <Action>(FindUsages)
+nmap gd <Action>(GotoDeclaration)
+nmap gu <Action>(FindUsages)
+nmap gt <Action>(GotoTest)
+nmap gr <Action>(ShowUsages)
 
 map <leader>c <Action>(CommentByLineComment)
 
 nmap <leader>ds <Action>(FileStructurePopup)
+
+map <C-h> <Action>(PrevSplitter)
+map <C-l> <Action>(NextSplitter)
 
 nmap \ :NERDTreeToggle<cr>
 
@@ -33,8 +36,8 @@ nmap <C-i> <Action>(Forward)
 nmap <leader>rr <Action>(RenameElement)
 
 -- Bookmarks
-nmap ha <Action>(ToggleBookmark)
-nmap hs <Action>(ShowBookmarks)
+" nmap ha <Action>(ToggleBookmark)
+" nmap hs <Action>(ShowBookmarks)
 
 -- Tests
 nmap <leader>tn <Action>(RunClass)
