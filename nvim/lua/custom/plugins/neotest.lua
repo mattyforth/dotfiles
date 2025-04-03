@@ -6,6 +6,7 @@ return {
     'antoinemadec/FixCursorHold.nvim',
     'nvim-treesitter/nvim-treesitter',
     'V13Axel/neotest-pest',
+    'olimorris/neotest-phpunit',
   },
   config = function()
     require('neotest').setup {
@@ -14,6 +15,7 @@ return {
           ignore_dirs = { 'node_modules', 'vendor' },
           compact = false,
         },
+        require 'neotest-phpunit',
       },
       output = {
         enabled = true,
@@ -23,7 +25,6 @@ return {
 
     -- Test keymaps
     -- TODO: Add keymaps to open the last test run, if we are not in a test file
-    -- add keymap to run the last run test
     -- add telescope test finder to allow us to run any test from anywhere
     -- fix 'no test output file' when running all tests
     local neotest = require 'neotest'
