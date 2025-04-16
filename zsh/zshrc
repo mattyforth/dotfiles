@@ -67,6 +67,7 @@ alias storm="phpstorm1 ."
 alias dep='vendor/bin/dep'
 
 # Laravel artisan
+alias php="valet php"
 alias vap="valet php ./artisan"
 
 # Flush DNS
