@@ -461,6 +461,7 @@ return {
         },
 
         tailwindcss = {
+          filetypes_include = {'blade'},
           classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
           includeLanguages = {
             eelixir = 'html-eex',
