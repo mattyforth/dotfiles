@@ -33,7 +33,7 @@ nmap \ :NERDTreeToggle<cr>
 nmap <C-i> <Action>(Forward)
 
 -- Refactoring
-nmap <leader>rr <Action>(RenameElement)
+" nmap <leader>rr <Action>(RenameElement)
 
 -- Bookmarks
 " nmap ha <Action>(ToggleBookmark)
@@ -42,6 +42,7 @@ nmap <leader>rr <Action>(RenameElement)
 -- Tests
 nmap <leader>tn <Action>(RunClass)
 nmap <leader>tr <Action>(Rerun)
+nmap <leader>ts <Action>(ActivateRunToolWindow)
 
 -- Code actions
 nmap <leader>ca <Action>(ShowIntentionActions)
