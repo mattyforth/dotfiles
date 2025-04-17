@@ -2,6 +2,7 @@
 vim.g.have_nerd_font = true
 
 vim.opt.breakindent = true -- Maintain indent when wrapping indented lines
+vim.opt.smartindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true -- Ignore case when searching
 vim.opt.smartcase = true -- Factor in case when the search contains a capital letter
