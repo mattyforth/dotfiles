@@ -23,16 +23,15 @@ vim.opt.rtp:prepend(lazypath)
 
 -- NOTE: I don't think the below is needed, filetype is set without this.
 -- Set blade files filetype
--- local bladeGrp
--- vim.api.nvim_create_augroup('BladeFiltypeRelated', { clear = true })
--- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
---   pattern = '*.blade.php',
---   group = bladeGrp,
---   callback = function()
---     vim.opt.filetype = 'blade'
---     -- vim.opt.commentstring = '{{-- %s --}}'
---   end,
--- })
+local bladeGrp
+vim.api.nvim_create_augroup('BladeFiltypeRelated', { clear = true })
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = '*.blade.php',
+  group = bladeGrp,
+  callback = function()
+    vim.opt.filetype = 'blade'
+  end,
+})
 
 vim.api.nvim_create_user_command('FormatDisable', function(args)
   if args.bang then
