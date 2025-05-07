@@ -25,6 +25,7 @@ vim.opt.incsearch = true
 vim.opt.autoread = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+vim.o.pumheight = 15
 
 -- Sync clipboard between OS and Neovim.
 vim.schedule(function()

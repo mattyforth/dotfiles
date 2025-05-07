@@ -3,6 +3,13 @@ source ~/.config/vim/vimrc
 -- Plugins
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'echasnovski/mini.ai'
+Plug 'tpope/vim-commentary'
+set highlightedyank
+set which-key
+set notimeout
+
+set clipboard+=unnamedplus
 
 nmap <leader>r :source ~/.config/ideavim/ideavimrc<CR>
 
@@ -30,7 +37,22 @@ map <C-l> <Action>(NextSplitter)
 
 nmap \ :NERDTreeToggle<cr>
 
+nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
+
+-- Window splitting / panes
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+map <leader>wt <Action>(ActivateTerminalToolWindow)
+
+-- Git
+nmap <leader>gc <Action>(CheckinProject)
+nmap <leader>gl <Action>(Vcs.Show.Log)
+nmap <leader>gp <Action>(Git.pull)
+nmap <leader>gP <Action>(Git.push)
+nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 -- Refactoring
 " nmap <leader>rr <Action>(RenameElement)
