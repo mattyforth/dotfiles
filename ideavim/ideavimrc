@@ -55,7 +55,7 @@ nmap <leader>gP <Action>(Git.push)
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 -- Refactoring
-" nmap <leader>rr <Action>(RenameElement)
+nmap <leader>rr <Action>(RenameElement)
 
 -- Bookmarks
 " nmap ha <Action>(ToggleBookmark)
