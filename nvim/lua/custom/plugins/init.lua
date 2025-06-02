@@ -189,7 +189,7 @@ return {
       vim.keymap.set('n', '<leader>sF', function()
         builtin.find_files { hidden = true, no_ignore = true, prompt_title = 'All Files' }
       end, { desc = '[S]earch [F]iles' })
-      vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
+      -- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
@@ -318,11 +318,11 @@ return {
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('<leader>ss', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>rr', vim.lsp.buf.rename, '[R]efactor: [R]ename')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
@@ -447,18 +447,21 @@ return {
           autostart = true,
         },
 
+        -- TODO: Make the vue language server work
         ts_ls = {
           init_options = {
             plugins = {
               {
                 name = '@vue/typescript-plugin',
-                location = require('mason-registry').get_package('vue-language-server'):get_install_path(),
+                location = "/Users/mattyforth/.nvm/versions/node/v22.14.0/lib/node_modules/@vue/language-server",
                 languages = { 'vue' },
               },
             },
+            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           },
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         },
+
+        -- volar = {},
 
         tailwindcss = {
           filetypes_include = {'blade'},
@@ -659,7 +662,7 @@ return {
         flavour = 'auto',
 
         background = {
-          dark = 'macchiato',
+          dark = 'mocha',
           light = 'latte',
         },
       }
