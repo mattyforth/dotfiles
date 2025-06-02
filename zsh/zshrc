@@ -15,6 +15,7 @@ source <(fzf --zsh)
 #----------------
 # Exports
 # ---------------
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
@@ -22,6 +23,7 @@ source <(fzf --zsh)
  else
    export EDITOR='vim'
  fi
+
 
 # Export NVM
 export NVM_DIR="$HOME/.nvm"
@@ -67,6 +69,7 @@ alias storm="phpstorm1 ."
 alias dep='vendor/bin/dep'
 
 # Laravel artisan
+alias composer="valet composer"
 alias php="valet php"
 alias vap="valet php ./artisan"
 
@@ -77,7 +80,7 @@ alias flushdns="sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset"
 alias gc="git commit -m $1"
 alias ga="git add"
 alias gs="git status"
-alias go="git checkout"
+# alias go="git checkout"
 alias gr="git restore --staged"
 alias gp="git push"
 
@@ -86,3 +89,4 @@ alias gp="git push"
 
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
