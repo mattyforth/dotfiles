@@ -53,6 +53,13 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 -- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Window splitting / panes
+vim.keymap.set('n', '<leader>wq', '<C-w>q', {desc = "Close current window"});
+vim.keymap.set('n', '<leader>wv', '<C-w>v', {desc = "Split window vertically"});
+vim.keymap.set('n', '<leader>ws', '<C-w>s', {desc = "from_monthSplit window horizontally"});
+vim.keymap.set('n', '<leader>wu', '<C-w>o', {desc = "Unsplit windows"});
+vim.keymap.set('n', '<leader>wm', '<C-w>x', {desc = "Move window to next pane"});
+
 -- Disable the command line thing that I always seem to open when typing :q the wrong way round
 vim.keymap.set('n', 'q:', ':q<CR>')
 
