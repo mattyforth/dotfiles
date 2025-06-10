@@ -1,6 +1,6 @@
 return {
   'adalessa/laravel.nvim',
-  enabled = false,
+  -- enabled = false,
   dependencies = {
     'tpope/vim-dotenv',
     'nvim-telescope/telescope.nvim',
@@ -15,8 +15,29 @@ return {
     { '<leader>ll', ':Laravel<cr>', desc = 'Run any laravel command' },
   },
   event = { 'VeryLazy' },
-  opts = {
-    lsp_server = 'intelephense',
-  },
+  opts = function()
+    local opts = require('laravel.options.default')
+    local environments = opts.environments
+    local definitions = environments.definitions
+
+    environments.default = 'valet'
+    environments.auto_discover = false
+
+    table.insert(definitions, {
+      name = "valet",
+      condition = {
+        executable = { "valet" },
+      },
+      commands = {
+        valet = { "valet" },
+        {
+          commands = { "php", "composer" },
+          prefix = { "valet" },
+        },
+      },
+    })
+
+    return opts
+  end,
   config = true,
 }
