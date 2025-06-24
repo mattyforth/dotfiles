@@ -45,6 +45,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Add scripts to path
 export PATH="$XDG_CONFIG_HOME/bin:$PATH"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Github CLI
 export GH_EDITOR=nvim
