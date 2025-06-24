@@ -223,18 +223,30 @@ return {
         },
 
         -- TODO: Make the vue language server work
-        ts_ls = {
-          init_options = {
-            plugins = {
-              {
-                name = '@vue/typescript-plugin',
-                location = '/Users/mattyforth/.nvm/versions/node/v22.14.0/lib/node_modules/@vue/language-server',
-                languages = { 'vue' },
-              },
-            },
-            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-          },
-        },
+        -- ts_ls = {
+        --   init_options = {
+        --     plugins = {
+        --       {
+        --         name = '@vue/typescript-plugin',
+        --         location = '/Users/mattyforth/.nvm/versions/node/v22.14.0/lib/node_modules/@vue/language-server',
+        --         languages = { 'vue' },
+        --       },
+        --     },
+        --     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'jsx'},
+        --   },
+        -- },
+
+        -- ts_ls = { 
+        --   cmd = {'typescript-language-server', '--stdio'},
+        --   init_options = {
+        --     tsserver = {
+        --       logDirectory = "/Users/mattyforth/tslslogs",
+        --       logVerbosity = "verbose"
+        --     }
+        --   }
+        -- },
+
+        vtsls = {},
 
         -- volar = {},
 
@@ -258,6 +270,12 @@ return {
           },
           validate = true,
         },
+
+        jsonls = {},
+
+        astro = {
+          filetypes = { "astro" }
+        }
       }
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
@@ -284,10 +302,19 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+
+            -- vim.lsp.enable(server_name);
+            -- vim.lsp.config(server_name, server);
             require('lspconfig')[server_name].setup(server)
           end,
         },
       }
+
+      for server, config in pairs(servers) do 
+        config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, config.capabilities or {})
+        vim.lsp.enable(server);
+        vim.lsp.config(server, config);
+      end
     end,
-  }
+  },
 }
