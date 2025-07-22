@@ -251,7 +251,7 @@ return {
         -- volar = {},
 
         tailwindcss = {
-          filetypes_include = { 'blade' },
+          filetypes_include = { 'blade', 'html', 'jsx' },
           classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
           includeLanguages = {
             eelixir = 'html-eex',
