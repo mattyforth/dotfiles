@@ -2,7 +2,7 @@ return {
   {
     'catppuccin/nvim',
     name = 'catpuccin',
-    enabled = true,
+    enabled = false,
     priority = 1000,
     init = function()
       require('catppuccin').setup {
@@ -32,9 +32,11 @@ return {
   {
     'tanvirtin/monokai.nvim',
     lazy = false,
-    enabled = false,
+    enabled = true,
     config = function()
-      require('monokai').setup{}
+      require('monokai').setup{
+        palette = require('monokai').pro
+      }
     end
   }
 }

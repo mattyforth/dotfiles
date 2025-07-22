@@ -1,4 +1,4 @@
-theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = dark:Monokai Pro,light:Monokai Pro Light
 
 font-family = JetBrainsMono Nerd Font Mono
 font-thicken = true
@@ -6,8 +6,7 @@ font-size = 15
 
 scrollback-limit = 1000000
 
-
-adjust-cell-height = 10
+#adjust-cell-height = 10
 window-padding-x = 10
 window-padding-y = 10
 window-decoration = true
