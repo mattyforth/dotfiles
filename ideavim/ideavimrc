@@ -11,7 +11,7 @@ set notimeout
 
 set clipboard+=unnamedplus
 
-nmap <leader>r :source ~/.config/ideavim/ideavimrc<CR>
+nmap <leader>rl :source ~/.config/ideavim/ideavimrc<CR>
 
 -- File navigation mappings
 nmap <leader>sf <Action>(GotoFile)
@@ -35,7 +35,7 @@ nmap <leader>ds <Action>(FileStructurePopup)
 map <C-h> <Action>(PrevSplitter)
 map <C-l> <Action>(NextSplitter)
 
-nmap \ :NERDTreeToggle<cr>
+nmap <leader>e :NERDTreeToggle<cr>
 
 nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
@@ -55,23 +55,31 @@ nmap <leader>gP <Action>(Git.push)
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 -- Refactoring
+nmap <leader>ra <Action>(ShowIntentionActions)
 nmap <leader>rr <Action>(RenameElement)
+nmap <leader>rv <Action>(IntroduceVariable)
+
+map <leader>f <Action>(ReformatCode)
 
 -- Bookmarks
 " nmap ha <Action>(ToggleBookmark)
 " nmap hs <Action>(ShowBookmarks)
 
 -- Tests
+nmap <leader>tp <Action>(PinToolWindowTab)
 nmap <leader>tn <Action>(RunClass)
 nmap <leader>tr <Action>(Rerun)
+nmap <leader>tf <Action)(RerunFailedTests)
 nmap <leader>ts <Action>(ActivateRunToolWindow)
+nmap <leader>ta <Action>(Run)
 
 -- Code actions
-nmap <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>cr <Action>(RenameElement)
 nmap <leader>cv <Action>(IntroduceVariable)
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cg <Action>(Generate)
+nmap <leader>cm <Action>(ImplementMethods)
 
-map <leader>f <Action>(ReformatCode)
 
 -- Command actions
 nmap <leader>li <Action>(com.laravel_idea.plugin.LaravelActionChooser)
