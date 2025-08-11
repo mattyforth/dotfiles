@@ -214,9 +214,9 @@ return {
 
         -- cssmodules_ls = {},
 
-        phpactor = {
-          autostart = true,
-        },
+        -- phpactor = {
+        --   autostart = true,
+        -- },
 
         intelephense = {
           autostart = true,
@@ -275,7 +275,9 @@ return {
 
         astro = {
           filetypes = { "astro" }
-        }
+        },
+
+        yamlls = {}
       }
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
