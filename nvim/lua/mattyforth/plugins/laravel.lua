@@ -9,28 +9,57 @@ return {
   },
   cmd = { 'Laravel' },
   keys = {
-    { '<leader>la', ':Laravel artisan<cr>', desc = 'Laravel artisan commands' },
-    { '<leader>lr', ':Laravel routes<cr>', desc = 'Laravel routes' },
-    { '<leader>lm', ':Laravel related<cr>', desc = 'Laravel related files' },
-    { '<leader>ll', ':Laravel<cr>', desc = 'Run any laravel command' },
+    {
+      '<leader>la',
+      function()
+        Laravel.pickers.artisan()
+      end,
+      desc = 'Laravel artisan commands',
+    },
+    {
+      '<leader>lr',
+      function()
+        Laravel.pickers.routes()
+      end,
+      desc = 'Laravel routes',
+    },
+    {
+      '<leader>lm',
+      function()
+        Laravel.pickers.commands.run 'actions'
+      end,
+      desc = 'Laravel related files',
+    },
+    {
+      '<leader>ll',
+      function()
+        Laravel.pickers.laravel()
+      end,
+      desc = 'Laravel: Open Laravel Picker',
+    },
     -- TODO: Figure out how we can use this gf for php files, and blade-nav for blade files
     {
-      '<leader>lgf',
+      'gf',
       function()
-        if require('laravel').app('gf').cursor_on_resource() then
-          return '<cmd>Laravel gf<CR>'
-        else
+        local ok, res = pcall(function()
+          if Laravel.app('gf').cursorOnResource() then
+            return "<cmd>lua Laravel.commands.run('gf')<cr>"
+          end
+        end)
+        if not ok or not res then
           return 'gf'
         end
+        return res
       end,
-      noremap = false,
       expr = true,
-      desc = 'Goto file',
+      noremap = true,
     },
   },
   event = { 'VeryLazy' },
   opts = function()
     local opts = require 'laravel.options.default'
+    opts.lsp_server = 'intelephense'
+
     local environments = opts.environments
     local definitions = environments.definitions
 

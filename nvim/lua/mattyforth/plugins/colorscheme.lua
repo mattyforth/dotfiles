@@ -32,11 +32,23 @@ return {
   {
     'tanvirtin/monokai.nvim',
     lazy = false,
-    enabled = true,
+    enabled = false,
     config = function()
       require('monokai').setup{
         palette = require('monokai').pro
       }
+    end
+  },
+  {
+    "polirritmico/monokai-nightasty.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.opt.background = 'light'
+
+      require("monokai-nightasty").load({})
+
+      vim.keymap.set('n', '<leader>vc', ':MonokaiToggleLight<CR>', {desc = "[V]iew [c]hange colorscheme"})
     end
   }
 }

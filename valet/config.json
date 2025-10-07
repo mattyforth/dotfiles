@@ -3,5 +3,6 @@
     "loopback": "127.0.0.1",
     "paths": [
         "/Users/mattyforth/.config/valet/Sites"
-    ]
+    ],
+    "share-tool": "cloudflared"
 }

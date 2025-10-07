@@ -3,11 +3,11 @@ source ~/.config/vim/vimrc
 -- Plugins
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
-Plug 'echasnovski/mini.ai'
 Plug 'tpope/vim-commentary'
 set highlightedyank
 set which-key
 set notimeout
+set mini-ai
 
 set clipboard+=unnamedplus
 
@@ -50,8 +50,8 @@ map <leader>wt <Action>(ActivateTerminalToolWindow)
 -- Git
 nmap <leader>gc <Action>(CheckinProject)
 nmap <leader>gl <Action>(Vcs.Show.Log)
-nmap <leader>gp <Action>(Git.pull)
-nmap <leader>gP <Action>(Git.push)
+nmap <leader>gp <Action>(Vcs.UpdateProject)
+nmap <leader>gP <Action>(Vcs.Push)
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 -- Refactoring
@@ -71,7 +71,7 @@ nmap <leader>tn <Action>(RunClass)
 nmap <leader>tr <Action>(Rerun)
 nmap <leader>tf <Action)(RerunFailedTests)
 nmap <leader>ts <Action>(ActivateRunToolWindow)
-nmap <leader>ta <Action>(Run)
+nmap <leader>ta <Action>(RunAnything)
 
 -- Code actions
 nmap <leader>cr <Action>(RenameElement)

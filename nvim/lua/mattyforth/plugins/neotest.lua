@@ -34,10 +34,6 @@ return {
       neotest.run.run()
     end, { desc = '[T]est [N]earest' })
 
-    vim.keymap.set('n', '<leader>tl', function()
-      neotest.run.run_last()
-    end, { desc = '[T]est [L]ast' })
-
     vim.keymap.set('n', '<leader>tt', function()
       neotest.run.run(vim.fn.expand '%')
     end, { desc = 'Test whole file' })
