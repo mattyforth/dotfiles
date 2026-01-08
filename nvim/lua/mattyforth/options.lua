@@ -25,7 +25,12 @@ vim.opt.incsearch = true
 vim.opt.autoread = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+-- vim.opt.showtabline = 2
 vim.o.pumheight = 15
+
+-- Folds
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 
 -- Sync clipboard between OS and Neovim.
 vim.schedule(function()
