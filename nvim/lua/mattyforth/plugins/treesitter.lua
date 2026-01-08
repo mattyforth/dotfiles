@@ -1,24 +1,48 @@
-return { -- Highlight, edit, and navigate code
-  'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects',
+return {
+  { -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    branch = 'main',
+    lazy = false,
+    config = function(_, opts)
+      local parsers = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'blade',
+        'php_only',
+        'astro',
+        'twig',
+      }
+
+      local treesitter = require 'nvim-treesitter'
+
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = parsers,
+        callback = function()
+          vim.treesitter.start()
+          vim.wo[0][0].foldmethod = 'expr'
+          vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
+
+      treesitter.setup(opts)
+      treesitter.install(parsers)
+    end,
   },
-  main = 'nvim-treesitter.configs', -- Sets main module to use for opts
-  -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-  opts = {
-    ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'blade', 'php_only', 'astro'},
-    -- Autoinstall languages that are not installed
-    auto_install = true,
-    highlight = {
-      enable = true,
-      -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-      --  If you are experiencing weird indenting issues, add the language to
-      --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-      additional_vim_regex_highlighting = { 'ruby' },
-    },
-    indent = { enable = true, disable = { 'ruby' } },
-    textobjects = {
+  {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    branch = 'main',
+    opts = {
       select = {
         enable = true,
         lookahead = true,
@@ -34,31 +58,48 @@ return { -- Highlight, edit, and navigate code
         set_jumps = true, -- whether to set jumps in the jumplist
         goto_next_start = {
           [']m'] = '@function.outer',
-          [']p'] = "@parameter.outer"
+          [']p'] = '@parameter.outer',
         },
         goto_previous_start = {
-          ['[m'] = "@function.outer",
-          ['[p'] = "@parameter.outer"
+          ['[m'] = '@function.outer',
+          ['[p'] = '@parameter.outer',
         },
         goto_next_end = {
           [']M'] = '@function.outer',
-          [']P'] = "@parameter.outer"
+          [']P'] = '@parameter.outer',
         },
         goto_previous_end = {
-          ['[M'] = "@function.outer",
-          ['[P'] = "@parameter.outer"
-        }
+          ['[M'] = '@function.outer',
+          ['[P'] = '@parameter.outer',
+        },
       },
-      -- TODO: Define next text objects
     },
+    init = function()
+      -- Disable entire built-in ftplugin mappings to avoid conflicts.
+      -- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
+      vim.g.no_plugin_maps = true
+
+      -- Or, disable per filetype (add as you like)
+      -- vim.g.no_python_maps = true
+      -- vim.g.no_ruby_maps = true
+      -- vim.g.no_rust_maps = true
+      -- vim.g.no_go_maps = true
+    end,
   },
-  config = function(_, opts)
-    require('nvim-treesitter.configs').setup(opts)
-  end,
-  -- There are additional nvim-treesitter modules that you can use to interact
-  -- with nvim-treesitter. You should go explore a few and see what interests you:
-  --
-  --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-  --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-  --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  {
+    enabled = true,
+    'windwp/nvim-ts-autotag',
+    config = function()
+      local autotag = require 'nvim-ts-autotag'
+
+      autotag.setup {
+        opts = {
+          -- Defaults
+          enable_close = true, -- Auto close tags
+          enable_rename = true, -- Auto rename pairs of tags
+          enable_close_on_slash = true, -- Auto close on trailing </
+        },
+      }
+    end,
+  },
 }
