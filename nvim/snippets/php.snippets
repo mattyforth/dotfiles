@@ -11,3 +11,10 @@ snippet enum "New enum"
     enum ${1}: ${2} {
 
     }
+
+snippet scope "New query scope"
+    #[Scope]
+    public function ${1}(Builder $query): Builder
+    {
+        return $query;
+    }
