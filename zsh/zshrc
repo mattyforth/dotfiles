@@ -1,6 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 export TERM="tmux-256color"
 
+ulimit -n 4096
+
 ZSH_THEME="robbyrussell"
 
 # Enable command autocorrection
@@ -74,6 +76,7 @@ alias dep='vendor/bin/dep'
 alias composer="valet composer"
 alias php="valet php"
 alias vap="valet php ./artisan"
+alias a="valet php artisan"
 
 # Flush DNS
 alias flushdns="sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset"
