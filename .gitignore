@@ -11,6 +11,7 @@ raycast/
 iterm2/
 com.strapi/
 github-copilot/
+stripe/config.toml
 
 karabiner/automatic_backups/*
 
