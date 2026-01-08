@@ -25,8 +25,8 @@ return {
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
-      -- vim.g.sonokai_enable_italic = true
-      -- vim.cmd.colorscheme 'sonokai'
+      vim.g.sonokai_enable_italic = true
+      vim.cmd.colorscheme 'sonokai'
     end,
   },
   {
@@ -34,21 +34,22 @@ return {
     lazy = false,
     enabled = false,
     config = function()
-      require('monokai').setup{
-        palette = require('monokai').pro
+      require('monokai').setup {
+        palette = require('monokai').pro,
       }
-    end
+    end,
   },
   {
-    "polirritmico/monokai-nightasty.nvim",
+    'polirritmico/monokai-nightasty.nvim',
     lazy = false,
     priority = 1000,
+    enabled = true,
     config = function()
       vim.opt.background = 'light'
 
-      require("monokai-nightasty").load({})
+      require('monokai-nightasty').load {}
 
-      vim.keymap.set('n', '<leader>vc', ':MonokaiToggleLight<CR>', {desc = "[V]iew [c]hange colorscheme"})
-    end
-  }
+      vim.keymap.set('n', '<leader>vc', ':MonokaiToggleLight<CR>', { desc = '[V]iew [c]hange colorscheme' })
+    end,
+  },
 }
