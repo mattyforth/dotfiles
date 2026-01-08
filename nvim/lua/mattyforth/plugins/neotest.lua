@@ -1,6 +1,6 @@
 return {
   'nvim-neotest/neotest',
-  enabled = false,
+  enabled = true,
   dependencies = {
     'nvim-neotest/nvim-nio',
     'nvim-lua/plenary.nvim',
@@ -15,6 +15,7 @@ return {
         require 'neotest-pest' {
           ignore_dirs = { 'node_modules', 'vendor' },
           compact = false,
+          pest_cmd = 'valet php ./vendor/bin/pest',
         },
         require 'neotest-phpunit',
       },
