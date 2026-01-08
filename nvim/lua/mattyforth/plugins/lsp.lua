@@ -164,6 +164,21 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+      capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-file-operations').default_capabilities())
+
+      -- local lspconfig = require 'lspconfig'
+      --
+      -- -- Setup lsp-file-operations for all servers
+      -- lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
+      --   capabilities = vim.tbl_deep_extend(
+      --     'force',
+      --     vim.lsp.protocol.make_client_capabilities(),
+      --     -- returns configured operations if setup() was already called
+      --     -- or default operations if not
+      --     require('lsp-file-operations').default_capabilities()
+      --   ),
+      -- })
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -220,6 +235,7 @@ return {
 
         intelephense = {
           autostart = true,
+          filetypes = { 'php', 'blade' },
         },
 
         -- TODO: Make the vue language server work
@@ -236,7 +252,7 @@ return {
         --   },
         -- },
 
-        -- ts_ls = { 
+        -- ts_ls = {
         --   cmd = {'typescript-language-server', '--stdio'},
         --   init_options = {
         --     tsserver = {
@@ -253,12 +269,12 @@ return {
         tailwindcss = {
           filetypes_include = { 'blade', 'html', 'jsx' },
           classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
-          includeLanguages = {
-            eelixir = 'html-eex',
-            eruby = 'erb',
-            htmlangular = 'html',
-            templ = 'html',
-          },
+          -- includeLanguages = {
+          --   eelixir = 'html-eex',
+          --   eruby = 'erb',
+          --   htmlangular = 'html',
+          --   templ = 'html',
+          -- },
           lint = {
             cssConflict = 'warning',
             invalidApply = 'error',
@@ -274,11 +290,12 @@ return {
         jsonls = {},
 
         astro = {
-          filetypes = { "astro" }
+          filetypes = { 'astro' },
         },
 
-        yamlls = {}
+        yamlls = {},
       }
+
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
@@ -312,10 +329,10 @@ return {
         },
       }
 
-      for server, config in pairs(servers) do 
+      for server, config in pairs(servers) do
         config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, config.capabilities or {})
-        vim.lsp.enable(server);
-        vim.lsp.config(server, config);
+        vim.lsp.enable(server)
+        vim.lsp.config(server, config)
       end
     end,
   },
