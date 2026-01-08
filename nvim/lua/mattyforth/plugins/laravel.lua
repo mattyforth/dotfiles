@@ -1,10 +1,13 @@
 return {
   'adalessa/laravel.nvim',
-  -- enabled = false,
+  -- dir = '~/Code/laravel.nvim',
+  enabled = true,
   dependencies = {
-    'tpope/vim-dotenv',
     'nvim-telescope/telescope.nvim',
+    'tpope/vim-dotenv',
     'MunifTanjim/nui.nvim',
+    'nvim-lua/plenary.nvim',
+    'nvim-neotest/nvim-nio',
     'kevinhwang91/promise-async',
   },
   cmd = { 'Laravel' },
@@ -37,6 +40,7 @@ return {
       end,
       desc = 'Laravel: Open Laravel Picker',
     },
+
     -- TODO: Figure out how we can use this gf for php files, and blade-nav for blade files
     {
       'gf',
@@ -56,31 +60,11 @@ return {
     },
   },
   event = { 'VeryLazy' },
-  opts = function()
-    local opts = require 'laravel.options.default'
-    opts.lsp_server = 'intelephense'
-
-    local environments = opts.environments
-    local definitions = environments.definitions
-
-    environments.default = 'valet'
-    environments.auto_discover = false
-
-    table.insert(definitions, {
-      name = 'valet',
-      condition = {
-        executable = { 'valet' },
-      },
-      commands = {
-        valet = { 'valet' },
-        {
-          commands = { 'php', 'composer' },
-          prefix = { 'valet' },
-        },
-      },
-    })
-
-    return opts
-  end,
+  opts = {
+    environments = {
+      default = 'valet',
+    },
+    lsp_server = 'intelephense',
+  },
   config = true,
 }
