@@ -4,11 +4,9 @@ return {
   enabled = true,
   dependencies = {
     'nvim-telescope/telescope.nvim',
-    'tpope/vim-dotenv',
     'MunifTanjim/nui.nvim',
     'nvim-lua/plenary.nvim',
     'nvim-neotest/nvim-nio',
-    'kevinhwang91/promise-async',
   },
   cmd = { 'Laravel' },
   keys = {
@@ -59,7 +57,10 @@ return {
       noremap = true,
     },
   },
-  event = { 'VeryLazy' },
+  ft = { 'blade', 'php' },
+  event = {
+    'BufEnter composer.json',
+  },
   opts = {
     environments = {
       default = 'valet',
