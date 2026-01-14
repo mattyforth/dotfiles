@@ -2,14 +2,14 @@ return {
   {
     'catppuccin/nvim',
     name = 'catpuccin',
-    enabled = false,
+    enabled = true,
     priority = 1000,
     init = function()
       require('catppuccin').setup {
         flavour = 'auto',
 
         background = {
-          dark = 'frappe',
+          dark = 'macchiato',
           light = 'latte',
         },
       }
@@ -43,7 +43,7 @@ return {
     'polirritmico/monokai-nightasty.nvim',
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       vim.opt.background = 'light'
 
