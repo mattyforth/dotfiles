@@ -15,7 +15,13 @@ return {
         require 'neotest-pest' {
           ignore_dirs = { 'node_modules', 'vendor' },
           compact = false,
-          pest_cmd = 'valet php ./vendor/bin/pest',
+          sail_enabled = function()
+            return false
+          end,
+          pest_cmd = { 'valet', 'php', './vendor/bin/pest' },
+          results_path = function()
+            return 'storage/app/' .. os.date 'pest-%Y%m%d-%H%M%S'
+          end,
         },
         require 'neotest-phpunit',
       },
