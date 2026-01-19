@@ -1,3 +1,5 @@
+require 'mattyforth.utils.globals'
+
 -- [[ Basic options ]]
 require 'mattyforth.options'
 
@@ -13,7 +15,6 @@ require 'mattyforth/health'
 require('lazy').setup({
 
   { import = 'mattyforth.plugins' },
-
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -35,8 +36,6 @@ require('lazy').setup({
     },
   },
 })
-
-require('mattyforth.utils.globals')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
