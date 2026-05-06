@@ -1,4 +1,5 @@
-theme = dark:Catppuccin Macchiato,light:Catppuccin Frappe
+#theme = dark:Catppuccin Mocha,light:Catppuccin Latte
+theme = dark:Rose Pine,light:Rose Pine Dawn
 
 font-family = JetBrainsMono Nerd Font Mono
 font-thicken = true
@@ -7,7 +8,7 @@ font-size = 16
 scrollback-limit = 1000000
 mouse-scroll-multiplier=1
 
-adjust-cell-height = 8
+adjust-cell-height = 4
 window-padding-x = 10
 window-padding-y = 10
 window-decoration = true
