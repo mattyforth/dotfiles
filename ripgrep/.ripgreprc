@@ -1,0 +1,3 @@
+# This does not work
+# TODO: Bring .ignore into config and symlink to home folder.
+--glob=!**/.git/*
