@@ -1,7 +1,9 @@
-export ZSH="$HOME/.oh-my-zsh"
-export TERM="tmux-256color"
+export DOTFILES="$HOME/.config"
+export XDG_CONFIG_HOME="$DOTFILES"
 
-ulimit -n 4096
+# Load ZSH
+export ZSH="$HOME/.oh-my-zsh"
+# export TERM="tmux-256color"
 
 ZSH_THEME="robbyrussell"
 
@@ -10,25 +12,19 @@ ENABLE_CORRECTION="false"
 
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+ZSH_CUSTOM="$DOTFILES/zsh"
 
 # set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-#----------------
-# Exports
-# ---------------
+source $ZSH/oh-my-zsh.sh
+
+# Setup homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='vim'
- fi
+export EDITOR='nvim'
 
-
-# Export NVM
+# Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -44,54 +40,16 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # Export config path
-export XDG_CONFIG_HOME="$HOME/.config"
-
-# Add scripts to path
-export PATH="$XDG_CONFIG_HOME/bin:$PATH"
-export PATH="$PATH:$HOME/.composer/vendor/bin"
+export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/.ripgreprc
 
 # Github CLI
 export GH_EDITOR=nvim
 
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 #export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 #export VIMDOTDIR="$XDG_CONFIG_HOME/vim"
-
-# -----------------------
-# Keybinds
-# -----------------------
-bindkey -s ^f "tmux-sessioniser\r"
-
-# -----------------------
-# Alias
-# -----------------------
-alias zshconfig="vim ~/.zshrc"
-alias sshconfig="vim ~/.ssh/config"
-alias reload="source ~/.zshrc"
-alias storm="phpstorm1 ."
-
-# PHP Deployer
-alias dep='vendor/bin/dep'
-
-# Laravel artisan
-alias composer="valet composer"
-alias php="valet php"
-alias vap="valet php ./artisan"
-alias a="valet php artisan"
-
-# Flush DNS
-alias flushdns="sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset"
-
-# Git
-alias gc="git commit -m $1"
-alias ga="git add"
-alias gs="git status"
-# alias go="git checkout"
-alias gr="git restore --staged"
-alias gp="git push"
 
 #export PATH="/Users/mattyforth/.config/herd-lite/bin:$PATH"
 #export PHP_INI_SCAN_DIR="/Users/mattyforth/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
-# Shopify Hydrogen alias to local projects
-alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 
