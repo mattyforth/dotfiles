@@ -12,8 +12,6 @@ return {
         'html',
         'lua',
         'luadoc',
-        'markdown',
-        'markdown_inline',
         'query',
         'vim',
         'vimdoc',
@@ -96,10 +94,20 @@ return {
         opts = {
           -- Defaults
           enable_close = true, -- Auto close tags
-          enable_rename = true, -- Auto rename pairs of tags
+          enable_rename = false, -- Auto rename pairs of tags
           enable_close_on_slash = true, -- Auto close on trailing </
         },
+        -- aliases = {
+        --   ['blade'] = 'html',
+        -- },
       }
+    end,
+  },
+  {
+    enabled = true,
+    'AndrewRadev/tagalong.vim',
+    config = function()
+      vim.cmd "let g:tagalong_additional_filetypes = ['blade']"
     end,
   },
 }

@@ -1,3 +1,6 @@
+-- Disable auto format by default
+vim.g.disable_autoformat = true
+
 local format_hunks = function()
   local buffer = vim.api.nvim_get_current_buf()
   local hunks = require('gitsigns').get_hunks(buffer)
@@ -75,5 +78,8 @@ return { -- Autoformat
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
     },
+    formatters = {
+        injected = { options = { ignore_errors = true } },
+    }
   },
 }

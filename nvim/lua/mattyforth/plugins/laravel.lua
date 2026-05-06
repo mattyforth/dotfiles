@@ -3,7 +3,6 @@ return {
   -- dir = '~/Code/laravel.nvim',
   enabled = true,
   dependencies = {
-    'nvim-telescope/telescope.nvim',
     'MunifTanjim/nui.nvim',
     'nvim-lua/plenary.nvim',
     'nvim-neotest/nvim-nio',
@@ -66,6 +65,11 @@ return {
       default = 'valet',
     },
     lsp_server = 'intelephense',
+    features = {
+      pickers = {
+        provider = 'snacks'
+      }
+    }
   },
   config = true,
 }

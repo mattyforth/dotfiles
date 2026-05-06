@@ -18,12 +18,12 @@ return {
           sail_enabled = function()
             return false
           end,
-          pest_cmd = { 'valet', 'php', './vendor/bin/pest' },
+          pest_cmd = { 'valet', 'php', 'artisan', 'test' },
           results_path = function()
             return 'storage/app/' .. os.date 'pest-%Y%m%d-%H%M%S'
           end,
         },
-        require 'neotest-phpunit',
+        -- require 'neotest-phpunit',
       },
       output = {
         enabled = true,
@@ -46,7 +46,7 @@ return {
     end, { desc = 'Test whole file' })
 
     vim.keymap.set('n', '<leader>to', function()
-      neotest.output.open {}
+      neotest.output.open { enter = true, short = true }
     end, { desc = '[T]est [o]utput' })
 
     vim.keymap.set('n', '<leader>tr', function()
@@ -54,7 +54,7 @@ return {
     end, { desc = '[T]est [r]erun' })
 
     vim.keymap.set('n', '<leader>tl', function()
-      neotest.output.open { last_run = true }
+      neotest.output.open { last_run = true, enter = true }
     end, { desc = '[T]est output [l]ast' })
 
     vim.keymap.set('n', '<leader>tO', function()

@@ -28,6 +28,9 @@ nmap gu <Action>(FindUsages)
 nmap gt <Action>(GotoTest)
 nmap gr <Action>(ShowUsages)
 
+-- Don't yank on paste
+vmap p "_dP
+
 map <leader>c <Action>(CommentByLineComment)
 
 nmap <leader>ds <Action>(FileStructurePopup)

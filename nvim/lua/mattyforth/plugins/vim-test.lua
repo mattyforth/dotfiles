@@ -16,6 +16,6 @@ return {
 
     -- Run php tests using valet
     vim.cmd "let test#php#phpunit#executable = 'valet php ./vendor/bin/phpunit'"
-    vim.cmd "let test#php#pest#executable = 'valet php ./vendor/bin/pest'"
+    vim.cmd "let test#php#pest#executable = 'valet php artisan test'"
   end,
 }

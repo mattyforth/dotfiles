@@ -11,6 +11,12 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Don't yank when pasting
+vim.keymap.set("v", "p", '"_dP', { desc = "Paste (no yank)" })
+
+-- Split line (opposite of J)
+vim.keymap.set("n", "S", ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>", { desc = "Split Line", silent = true })
+
 -- Test keymaps
 -- TODO: Add keymaps to open the last test run, if we are not in a test file
 -- add keymap to run the last run test
@@ -63,7 +69,3 @@ vim.keymap.set('n', '<leader>wm', '<C-w>x', {desc = "Move window to next pane"})
 -- Disable the command line thing that I always seem to open when typing :q the wrong way round
 vim.keymap.set('n', 'q:', ':q<CR>')
 
--- Maintain the cursor position when yanking a visual selection.
--- http://ddrscott.github.io/blog/2016/yank-without-jank/
-vim.keymap.set('v', 'y', 'myy`y')
-vim.keymap.set('v', 'Y', 'myY`y')

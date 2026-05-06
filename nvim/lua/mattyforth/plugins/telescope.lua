@@ -1,5 +1,6 @@
 return { -- Fuzzy Finder (files, lsp, etc)
   'nvim-telescope/telescope.nvim',
+  enabled = false,
   event = 'VimEnter',
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -47,7 +48,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
           sorted = 'sort_lastused',
         },
         find_files = {
-          hidden = true,
+          find_command = { 'rg', '--files', '--hidden', '--glob=!public/*' },
         },
       },
       extensions = {
