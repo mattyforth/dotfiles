@@ -1,8 +1,5 @@
 # Application switching
-hyper - b : open /Applications/Firefox.app
-# hyper - b : open /Applications/Chromium.app
-# hyper - b : open /Applications/Zen.app
-# hyper - b : open /Applications/Vivaldi.app
+hyper - b : open /Applications/Chromium.app
 hyper - n : open /Applications/Obsidian.app
 hyper - c : open ~/Applications/PhpStorm.app
 hyper - t : open /Applications/Ghostty.app
