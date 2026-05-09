@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+
+.idea/
+.vscode/
+
+.env
+data.ms/
+/vendor
+/node_modules
+*.log

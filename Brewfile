@@ -1,4 +1,4 @@
-tap "jesseduffield/lazygit"
+
 # PHPmon cask
 tap "nicoverbruggen/cask" 
 tap "osx-cross/arm"
@@ -71,4 +71,4 @@ cask "rectangle"
 cask "sequel-ace"
 cask "ungoogled-chromium"
 cask "zoom"
-cast "figma"
+cask "figma"
