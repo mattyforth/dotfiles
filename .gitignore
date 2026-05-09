@@ -12,6 +12,7 @@ iterm2/
 com.strapi/
 github-copilot/
 stripe/config.toml
+git/config
 
 karabiner/automatic_backups/*
 
