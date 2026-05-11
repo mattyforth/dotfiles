@@ -16,6 +16,7 @@ return {
         'vim',
         'vimdoc',
         'blade',
+        'php',
         'php_only',
         'astro',
         'twig',
