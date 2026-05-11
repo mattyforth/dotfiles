@@ -13,6 +13,8 @@ com.strapi/
 github-copilot/
 stripe/config.toml
 git/config
+composer/vendor
+composer/.htaccess
 
 karabiner/automatic_backups/*
 

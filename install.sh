@@ -40,6 +40,9 @@ brew cleanup --prune=all
 
 source ~/.config/zsh/zshrc
 
+echo "Installing global composer packages"
+composer global install 
+
 echo "Installing NVM lts node version"
 nvm install --lts
 

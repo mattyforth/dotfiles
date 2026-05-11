@@ -7,4 +7,4 @@ add_to_path() {
 
 add_to_path "$XDG_CONFIG_HOME/bin"
 
-add_to_path "$HOME/.composer/vendor/bin"
+add_to_path "$XDG_CONFIG_HOME/composer/vendor/bin"
