@@ -46,6 +46,9 @@ composer global install
 echo "Installing NVM lts node version"
 nvm install --lts
 
+echo "Installing valet"
+valet install
+
 # Set zsh as our default shell.
 echo $(which zsh) | sudo tee -a /etc/shells
 sudo chsh -s $(which zsh)
