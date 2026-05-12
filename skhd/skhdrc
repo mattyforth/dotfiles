@@ -37,3 +37,8 @@ alt - y : open -g "rectangle://execute-action?name=previous-display"
 alt - o : open -g "rectangle://execute-action?name=next-display"
 alt + shift - h : open -g "rectangle://execute-action?name=previous-display"
 alt + shift - l : open -g "rectangle://execute-action?name=next-display"
+
+# Sequal ace table search
+cmd - f [
+    "Sequel Ace" : skhd -k 'cmd + alt + ctrl - f'
+]
