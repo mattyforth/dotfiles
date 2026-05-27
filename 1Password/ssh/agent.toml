@@ -29,7 +29,12 @@
 # More examples can be found here:
 #  https://developer.1password.com/docs/ssh/agent/config
 [[ssh-keys]]
-vault = "Personal"
+item = 'SSH Key'
+vault = 'Personal'
 
 [[ssh-keys]]
-vault = "Dash"
+item = 'Github Signing Key'
+vault = 'Personal'
+
+#[[ssh-keys]]
+#vault = "Dash"
