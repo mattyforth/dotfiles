@@ -20,3 +20,9 @@ karabiner/automatic_backups/*
 
 valet/*
 !valet/config.json
+
+composer/auth.json
+
+intelephense/**/*
+!intelephense/global/
+!intelephense/global/license.txt.tpl

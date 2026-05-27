@@ -58,6 +58,7 @@ exec $SHELL
 eval $(op signin)
 
 eval $(op inject -i $DOTFILES_PATH/git/config.tpl -o $DOTFILES_PATH/git/config)
+eval $(op inject -i $DOTFILES_PATH/intelephense/global/license.txt.tpl -o $DOTFILES_PATH/intelephense/global/license.txt)
 
 rm ~/.zshrc
 ln -s ~/.zshrc $DOTFILES_PATH/zsh/zshrc
