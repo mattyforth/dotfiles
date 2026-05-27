@@ -1,3 +1,8 @@
+cd ~/Documents
+
+git clone git@github.com:mattyforth/notes.git
+
+cd ~
 mkdir Code/Sites
 cd Code/Sites
 
