@@ -40,6 +40,9 @@ brew cleanup --prune=all
 
 source ~/.config/zsh/zshrc
 
+echo "Symlinking Java"
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
 echo "Installing global composer packages"
 composer global install 
 

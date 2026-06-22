@@ -62,6 +62,7 @@ brew "nvm"
 brew "tree-sitter"
 brew "tree-sitter-cli"
 brew "mac-mouse-fix"
+brew "java"
 
 cask "1password"
 cask "1password-cli"
