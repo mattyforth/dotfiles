@@ -1,6 +1,3 @@
-
-# PHPmon cask
-tap "nicoverbruggen/cask" 
 tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
@@ -8,6 +5,7 @@ tap "shivammathur/extensions"
 tap "shivammathur/php"
 tap "stripe/stripe-cli"
 tap "typesense/tap"
+tap "nicoverbruggen/homebrew-cask", trusted: true
 
 brew "zsh"
 brew "gettext"
@@ -85,3 +83,4 @@ cask "caffeine"
 cask "spotify"
 cask "obsidian"
 cask "logitech-g-hub"
+cask "phpmon"
