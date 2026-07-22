@@ -2,7 +2,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    enabled = true,
+    enabled = false,
     config = function()
       vim.cmd("colorscheme rose-pine")
     end
@@ -10,14 +10,14 @@ return {
   {
     'catppuccin/nvim',
     name = 'catpuccin',
-    enabled = false,
+    enabled = true,
     priority = 1000,
     init = function()
       require('catppuccin').setup {
         flavour = 'auto',
 
         background = {
-          dark = 'mocha',
+          dark = 'frappe',
           light = 'latte',
         },
       }

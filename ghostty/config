@@ -1,5 +1,5 @@
-#theme = dark:Catppuccin Mocha,light:Catppuccin Latte
-theme = dark:Rose Pine,light:Rose Pine Dawn
+theme = dark:Catppuccin Frappe,light:Catppuccin Latte
+#theme = dark:Rose Pine,light:Rose Pine Dawn
 
 font-family = JetBrainsMono Nerd Font Mono
 font-thicken = true
