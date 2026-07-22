@@ -26,3 +26,7 @@ composer/auth.json
 intelephense/**/*
 !intelephense/global/
 !intelephense/global/license.txt.tpl
+
+1Password/telemetry-enabled
+
+cursor/
