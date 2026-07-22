@@ -1,11 +1,11 @@
 source ~/.config/vim/vimrc
 
--- Plugins
+" Plugins
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 set highlightedyank
-set which-key
+" set which-key
 set notimeout
 set mini-ai
 
@@ -13,9 +13,9 @@ set clipboard+=unnamedplus
 
 nmap <leader>rl :source ~/.config/ideavim/ideavimrc<CR>
 
--- File navigation mappings
+" File navigation mappings
 nmap <leader>sf <Action>(GotoFile)
-nmap <leader>ss <Action>(GotoSymbol)
+nmap <leader>sS <Action>(GotoSymbol)
 nmap <leader>sa <Action>(GotoAction)
 nmap <leader><Space> <Action>(RecentFiles)
 nmap <leader>sg <Action>(FindInPath)
@@ -28,12 +28,12 @@ nmap gu <Action>(FindUsages)
 nmap gt <Action>(GotoTest)
 nmap gr <Action>(ShowUsages)
 
--- Don't yank on paste
+" Don't yank on paste
 vmap p "_dP
 
 map <leader>c <Action>(CommentByLineComment)
 
-nmap <leader>ds <Action>(FileStructurePopup)
+nmap <leader>ss <Action>(FileStructurePopup)
 
 map <C-h> <Action>(PrevSplitter)
 map <C-l> <Action>(NextSplitter)
@@ -43,32 +43,32 @@ nmap <leader>e :NERDTreeToggle<cr>
 nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
 
--- Window splitting / panes
+" Window splitting / panes
 map <leader>wv <Action>(SplitVertically)
 map <leader>ws <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 map <leader>wt <Action>(ActivateTerminalToolWindow)
 
--- Git
+" Git
 nmap <leader>gc <Action>(CheckinProject)
 nmap <leader>gl <Action>(Vcs.Show.Log)
 nmap <leader>gp <Action>(Vcs.UpdateProject)
 nmap <leader>gP <Action>(Vcs.Push)
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
--- Refactoring
+" Refactoring
 nmap <leader>ra <Action>(ShowIntentionActions)
 nmap <leader>rr <Action>(RenameElement)
 nmap <leader>rv <Action>(IntroduceVariable)
 
 map <leader>f <Action>(ReformatCode)
 
--- Bookmarks
+" Bookmarks
 " nmap ha <Action>(ToggleBookmark)
 " nmap hs <Action>(ShowBookmarks)
 
--- Tests
+" Tests
 nmap <leader>tp <Action>(PinToolWindowTab)
 nmap <leader>tn <Action>(RunClass)
 nmap <leader>tr <Action>(Rerun)
@@ -76,7 +76,7 @@ nmap <leader>tf <Action)(RerunFailedTests)
 nmap <leader>ts <Action>(ActivateRunToolWindow)
 nmap <leader>ta <Action>(RunAnything)
 
--- Code actions
+" Code actions
 nmap <leader>cr <Action>(RenameElement)
 nmap <leader>cv <Action>(IntroduceVariable)
 nmap <leader>ca <Action>(ShowIntentionActions)
@@ -84,6 +84,6 @@ nmap <leader>cg <Action>(Generate)
 nmap <leader>cm <Action>(ImplementMethods)
 
 
--- Command actions
+" Command actions
 nmap <leader>li <Action>(com.laravel_idea.plugin.LaravelActionChooser)
 
