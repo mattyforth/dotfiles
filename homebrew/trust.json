@@ -1,0 +1,10 @@
+{
+  "trustedtaps": [
+    "nicoverbruggen/cask",
+    "shivammathur/php"
+  ],
+  "trustedformulae": [
+    "shivammathur/php/php@7.2",
+    "shivammathur/php/php@7.4"
+  ]
+}
