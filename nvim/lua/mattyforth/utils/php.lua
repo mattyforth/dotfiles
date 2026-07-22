@@ -13,7 +13,7 @@ function M.get_php_path()
   end
 
   local valet_php = vim.fn.trim(vim.fn.system("valet which-php"))
-  
+
   if valet_php then
     return valet_php
   end

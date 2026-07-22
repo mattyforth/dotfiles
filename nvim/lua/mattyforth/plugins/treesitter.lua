@@ -20,6 +20,7 @@ return {
         'php_only',
         'astro',
         'twig',
+        'yaml'
       }
 
       local treesitter = require 'nvim-treesitter'

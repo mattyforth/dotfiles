@@ -11,6 +11,7 @@ return {
       },
     },
   },
+  -- TODO: Refactor this to use native LSP provided by Neovim 0.12.
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -107,7 +108,8 @@ return {
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
-          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          --  Handled by snacks
+          -- map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           map('K', vim.lsp.buf.hover, 'Show hover information')
 
@@ -172,8 +174,8 @@ return {
       -- capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-file-operations').default_capabilities())
 
       -- local lspconfig = require 'lspconfig'
-      --
-      -- -- Setup lsp-file-operations for all servers
+
+      -- Setup lsp-file-operations for all servers
       -- lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
       --   capabilities = vim.tbl_deep_extend(
       --     'force',
@@ -234,15 +236,15 @@ return {
 
         -- cssmodules_ls = {},
 
-        phpactor = {
-          autostart = true,
-          filetypes = {'php', 'blade'}
-        },
-
-        -- intelephense = {
+        -- phpactor = {
         --   autostart = false,
-        --   filetypes = { 'php', 'blade' },
+        --   filetypes = {'php', 'blade'}
         -- },
+
+        intelephense = {
+          autostart = true,
+          filetypes = { 'php', 'blade' },
+        },
 
         -- TODO: Make the vue language server work
         -- ts_ls = {

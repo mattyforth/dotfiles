@@ -29,6 +29,10 @@ return {
         enabled = true,
         open_on_run = 'long',
       },
+      status = {
+        enabled = true,
+        signs = true,
+      }
     }
 
     -- Test keymaps
